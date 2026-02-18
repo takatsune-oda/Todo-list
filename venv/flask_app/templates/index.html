@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% for task in tasks %}
+<div class="task {% if task[2] == 1 %}done{% endif %}">
+    <span>{{ task[1] }}</span>
+    <form method="post" action="/done/{{ task[0] }}">
+        <button>
+            {% if task[2] == 1 %}
+                未完了
+            {% else %}
+                完了
+            {% endif %}
+        </button>
+    </form>
+    <form method="post" action="/delete/{{ task[0] }}">
+        <button>削除</button>
+    </form>
+</div>
+{% endfor %}
+<form method="post">
+<div class="form">
+    <div class="input">
+        <input type="text" name="name">
+    </div>
+    <div class="send_button">
+        <button>送信</button>
+    </div>
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# venvの中にあるライブラリだけを除外
+venv/Lib/
+venv/Scripts/
+venv/pyvenv.cfg
+venv/Include/
+
+# データベースの除外
+venv/flask_app/todo.db
+
+
+# キャッシュを除外
+__pycache__/
+*.pyc

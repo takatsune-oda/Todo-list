@@ -1,0 +1,39 @@
+body {
+    background: #808080;
+}
+.task {
+    background: #ffffff;
+    
+}
+.delete {
+    color: red;
+    text-decoration: none;
+    text-align: right;
+    display: inline-block;
+    padding: 8px;
+    background-color: black;
+}
+.input input {
+    background-color: aqua;
+    padding: 8px;
+    margin: auto;
+}
+.form {
+    display: flex;
+    gap: 8px;
+}
+.send_button button {
+    background-color: lawngreen;
+    color: black;
+    border: 0.5rem outset purple;
+    padding: 8px;
+    border-radius: 2em;
+}
+.send_button button:hover {
+    color: white;
+    background: red;
+}
+.done {
+    text-decoration: line-through;
+    color: blue;
+}
