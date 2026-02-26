@@ -17,7 +17,7 @@ def get_task():
     con = get_db_connection()
     cur = con.cursor()
     cur.execute(
-        "SELECT id, name, done FROM tasks"
+        "SELECT id, name, done, created_at FROM tasks"
     )
     tasks = cur.fetchall()
     con.commit()

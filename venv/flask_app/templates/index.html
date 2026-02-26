@@ -8,7 +8,9 @@
 <body>
 {% for task in tasks %}
 <div class="task {% if task[2] == 1 %}done{% endif %}">
-    <span>{{ task[1] }}</span>
+    <span>{{ task[1] }}
+        <small>{{ task[3] }}</small>
+    </span>
     <form method="post" action="/done/{{ task[0] }}">
         <button>
             {% if task[2] == 1 %}
@@ -27,6 +29,15 @@
 <div class="form">
     <div class="input">
         <input type="text" name="name">
+    </div>
+    <div class="flash_msg">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        {%if messages %}
+            {% for category, message in messages %}
+            <p class="{{ category }}">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
     </div>
     <div class="send_button">
         <button>送信</button>

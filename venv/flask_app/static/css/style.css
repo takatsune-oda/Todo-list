@@ -37,3 +37,9 @@ body {
     text-decoration: line-through;
     color: blue;
 }
+.error {
+    color:red;
+}
+.success {
+    color:blue;
+}
